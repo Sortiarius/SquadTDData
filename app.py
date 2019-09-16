@@ -18,6 +18,9 @@ def get_units():
 def get_waves():
     return jsonify(wave_data)
 
+@app.route('/sends/', methods=['GET'])
+def get_sends():
+    return jsonify(send_data)
 
 @app.route('/units/<string:unit>', methods=['GET'])
 def get_unit(unit):
@@ -42,6 +45,14 @@ def get_wave_by_number(number):
             return jsonify(wave_data[wave])
 
     return jsonify({"error": "wave does not exist"})
+
+
+@app.route('/sends/<string:send>', methods=['GET'])
+def get_send(send):
+    if send in send_data:
+        return jsonify(send_data[send])
+    else:
+        return jsonify({"error": "wave does not exist"})
 
 
 if __name__ == '__main__':
