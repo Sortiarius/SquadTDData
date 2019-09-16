@@ -1,0 +1,577 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<Catalog>
+    <CUser id="Race">
+        <Fields Id="Builder" Type="GameLink" GameLinkType="Unit"/>
+        <Fields>
+            <Id value="Fighters"/>
+            <Type value="GameLink"/>
+            <GameLinkType value="Unit"/>
+            <Count value="20"/>
+        </Fields>
+        <Fields Id="Passive" Type="GameLink" GameLinkType="Behavior"/>
+        <Fields Id="Name" Type="String"/>
+        <Fields Id="Portrait" Type="Image"/>
+        <Fields Id="Description" Type="Text"/>
+        <Fields Id="Required Level" Type="Int"/>
+        <Fields Id="Required Prestige" Type="Int"/>
+        <Instances Id="[Default]">
+            <GameLink GameLink="SoulBuilder">
+                <Field Id="Builder"/>
+            </GameLink>
+        </Instances>
+        <Instances Id="Soul Builder">
+            <GameLink GameLink="fEssence">
+                <Field Id="Fighters"/>
+            </GameLink>
+            <GameLink GameLink="fRuneguard">
+                <Field Id="Fighters" Index="1"/>
+            </GameLink>
+            <Image Image="Assets\Textures\mengskhologramportrait_static.dds">
+                <Field Id="Portrait"/>
+            </Image>
+            <Int Int="10">
+                <Field Id="Required Level"/>
+            </Int>
+            <Int Int="2">
+                <Field Id="Required Prestige"/>
+            </Int>
+            <String String="Soul">
+                <Field Id="Name"/>
+            </String>
+            <Text Text="UserData/Race/Soul Builder_Description">
+                <Field Id="Description"/>
+            </Text>
+        </Instances>
+        <Instances Id="Beast Builder">
+            <GameLink GameLink="BeastBuilder">
+                <Field Id="Builder"/>
+            </GameLink>
+            <GameLink GameLink="fZerglingWarrior">
+                <Field Id="Fighters"/>
+            </GameLink>
+            <GameLink GameLink="fZerglingSavage">
+                <Field Id="Fighters" Index="1"/>
+            </GameLink>
+            <GameLink GameLink="fAberrationBasher">
+                <Field Id="Fighters" Index="2"/>
+            </GameLink>
+            <GameLink GameLink="fAberrationPulverizer">
+                <Field Id="Fighters" Index="3"/>
+            </GameLink>
+            <GameLink GameLink="fHarpy">
+                <Field Id="Fighters" Index="4"/>
+            </GameLink>
+            <GameLink GameLink="fMedusa">
+                <Field Id="Fighters" Index="5"/>
+            </GameLink>
+            <GameLink GameLink="fRoachFighter">
+                <Field Id="Fighters" Index="6"/>
+            </GameLink>
+            <GameLink GameLink="fRoachChampion">
+                <Field Id="Fighters" Index="7"/>
+            </GameLink>
+            <GameLink GameLink="fGrizzly">
+                <Field Id="Fighters" Index="8"/>
+            </GameLink>
+            <GameLink GameLink="fGreymane">
+                <Field Id="Fighters" Index="9"/>
+            </GameLink>
+            <GameLink GameLink="fSpawnofDragon">
+                <Field Id="Fighters" Index="10"/>
+            </GameLink>
+            <GameLink GameLink="fDragonAspect">
+                <Field Id="Fighters" Index="11"/>
+            </GameLink>
+            <GameLink GameLink="ToxicBlood">
+                <Field Id="Passive"/>
+            </GameLink>
+            <Int Int="15">
+                <Field Id="Required Level"/>
+            </Int>
+        </Instances>
+    </CUser>
+    <CUser id="1xContestBossBattles">
+        <Fields>
+            <Id value="Spawn Unit"/>
+            <Type value="GameLink"/>
+            <GameLinkType value="Unit"/>
+            <Count value="6"/>
+            <EditorText value="Name"/>
+        </Fields>
+        <Fields Id="Spawn Count" Type="Int" Count="6"/>
+        <Instances Id="[Default]"/>
+        <Instances Id="Easy_Infestor">
+            <GameLink GameLink="Wave10">
+                <Field Id="Spawn Unit"/>
+            </GameLink>
+            <Int Int="1">
+                <Field Id="Spawn Count"/>
+            </Int>
+        </Instances>
+        <Instances Id="Hard_Infestor">
+            <GameLink GameLink="Wave10">
+                <Field Id="Spawn Unit"/>
+            </GameLink>
+            <GameLink GameLink="Send_Queen">
+                <Field Id="Spawn Unit" Index="1"/>
+            </GameLink>
+            <GameLink GameLink="Send_Goliath">
+                <Field Id="Spawn Unit" Index="2"/>
+            </GameLink>
+            <Int Int="1">
+                <Field Id="Spawn Count"/>
+            </Int>
+            <Int Int="1">
+                <Field Id="Spawn Count" Index="1"/>
+            </Int>
+            <Int Int="1">
+                <Field Id="Spawn Count" Index="2"/>
+            </Int>
+        </Instances>
+        <Instances Id="Easy_Fatty">
+            <GameLink GameLink="Wave20">
+                <Field Id="Spawn Unit"/>
+            </GameLink>
+            <Int Int="1">
+                <Field Id="Spawn Count"/>
+            </Int>
+        </Instances>
+        <Instances Id="Hard_Fatty">
+            <GameLink GameLink="Wave20">
+                <Field Id="Spawn Unit"/>
+            </GameLink>
+            <GameLink GameLink="Send_Broodlord">
+                <Field Id="Spawn Unit" Index="1"/>
+            </GameLink>
+            <GameLink GameLink="Send_High_Templar">
+                <Field Id="Spawn Unit" Index="2"/>
+            </GameLink>
+            <GameLink GameLink="Send_Goliath">
+                <Field Id="Spawn Unit" Index="3"/>
+            </GameLink>
+            <Int Int="1">
+                <Field Id="Spawn Count"/>
+            </Int>
+            <Int Int="1">
+                <Field Id="Spawn Count" Index="2"/>
+            </Int>
+            <Int Int="1">
+                <Field Id="Spawn Count" Index="1"/>
+            </Int>
+            <Int Int="1">
+                <Field Id="Spawn Count" Index="3"/>
+            </Int>
+        </Instances>
+        <Instances Id="Easy_Brutalisk">
+            <GameLink GameLink="Wave30">
+                <Field Id="Spawn Unit"/>
+            </GameLink>
+            <Int Int="1">
+                <Field Id="Spawn Count"/>
+            </Int>
+        </Instances>
+        <Instances Id="Hard_Brutalisk">
+            <GameLink GameLink="Wave30">
+                <Field Id="Spawn Unit"/>
+            </GameLink>
+            <GameLink GameLink="Send_Thor">
+                <Field Id="Spawn Unit" Index="1"/>
+            </GameLink>
+            <GameLink GameLink="Send_High_Templar">
+                <Field Id="Spawn Unit" Index="2"/>
+            </GameLink>
+            <GameLink GameLink="Send_Goliath">
+                <Field Id="Spawn Unit" Index="3"/>
+            </GameLink>
+            <Int Int="1">
+                <Field Id="Spawn Count"/>
+            </Int>
+            <Int Int="2">
+                <Field Id="Spawn Count" Index="1"/>
+            </Int>
+            <Int Int="2">
+                <Field Id="Spawn Count" Index="2"/>
+            </Int>
+            <Int Int="1">
+                <Field Id="Spawn Count" Index="3"/>
+            </Int>
+        </Instances>
+    </CUser>
+    <CUser id="3xContestBossBattles">
+        <Fields>
+            <Id value="Spawn Unit"/>
+            <Type value="GameLink"/>
+            <GameLinkType value="Unit"/>
+            <Count value="6"/>
+            <EditorText value="Name"/>
+        </Fields>
+        <Fields Id="Spawn Count" Type="Int" Count="6"/>
+        <Instances Id="[Default]"/>
+        <Instances Id="Easy_Infestor">
+            <GameLink GameLink="Wave10">
+                <Field Id="Spawn Unit"/>
+            </GameLink>
+            <Int Int="3">
+                <Field Id="Spawn Count"/>
+            </Int>
+        </Instances>
+        <Instances Id="Hard_Infestor">
+            <GameLink GameLink="Wave10">
+                <Field Id="Spawn Unit"/>
+            </GameLink>
+            <GameLink GameLink="Send_Queen">
+                <Field Id="Spawn Unit" Index="1"/>
+            </GameLink>
+            <GameLink GameLink="Send_Goliath">
+                <Field Id="Spawn Unit" Index="2"/>
+            </GameLink>
+            <GameLink GameLink="Send_Zergling">
+                <Field Id="Spawn Unit" Index="3"/>
+            </GameLink>
+            <Int Int="3">
+                <Field Id="Spawn Count"/>
+            </Int>
+            <Int Int="1">
+                <Field Id="Spawn Count" Index="1"/>
+            </Int>
+            <Int Int="1">
+                <Field Id="Spawn Count" Index="2"/>
+            </Int>
+            <Int Int="10">
+                <Field Id="Spawn Count" Index="3"/>
+            </Int>
+        </Instances>
+        <Instances Id="Easy_Fatty">
+            <GameLink GameLink="Wave20">
+                <Field Id="Spawn Unit"/>
+            </GameLink>
+            <Int Int="3">
+                <Field Id="Spawn Count"/>
+            </Int>
+        </Instances>
+        <Instances Id="Hard_Fatty">
+            <GameLink GameLink="Wave20">
+                <Field Id="Spawn Unit"/>
+            </GameLink>
+            <GameLink GameLink="Send_Broodlord">
+                <Field Id="Spawn Unit" Index="1"/>
+            </GameLink>
+            <GameLink GameLink="Send_High_Templar">
+                <Field Id="Spawn Unit" Index="2"/>
+            </GameLink>
+            <GameLink GameLink="Send_Goliath">
+                <Field Id="Spawn Unit" Index="3"/>
+            </GameLink>
+            <Int Int="3">
+                <Field Id="Spawn Count"/>
+            </Int>
+            <Int Int="1">
+                <Field Id="Spawn Count" Index="1"/>
+            </Int>
+            <Int Int="3">
+                <Field Id="Spawn Count" Index="2"/>
+            </Int>
+            <Int Int="1">
+                <Field Id="Spawn Count" Index="3"/>
+            </Int>
+        </Instances>
+        <Instances Id="Easy_Brutalisk">
+            <GameLink GameLink="Wave30">
+                <Field Id="Spawn Unit"/>
+            </GameLink>
+            <Int Int="3">
+                <Field Id="Spawn Count"/>
+            </Int>
+        </Instances>
+        <Instances Id="Hard_Brutalisk">
+            <GameLink GameLink="Wave30">
+                <Field Id="Spawn Unit"/>
+            </GameLink>
+            <GameLink GameLink="Send_Thor">
+                <Field Id="Spawn Unit" Index="1"/>
+            </GameLink>
+            <GameLink GameLink="Send_Broodlord">
+                <Field Id="Spawn Unit" Index="2"/>
+            </GameLink>
+            <GameLink GameLink="Send_High_Templar">
+                <Field Id="Spawn Unit" Index="3"/>
+            </GameLink>
+            <GameLink GameLink="Send_Goliath">
+                <Field Id="Spawn Unit" Index="4"/>
+            </GameLink>
+            <Int Int="3">
+                <Field Id="Spawn Count"/>
+            </Int>
+            <Int Int="3">
+                <Field Id="Spawn Count" Index="1"/>
+            </Int>
+            <Int Int="3">
+                <Field Id="Spawn Count" Index="2"/>
+            </Int>
+            <Int Int="3">
+                <Field Id="Spawn Count" Index="3"/>
+            </Int>
+            <Int Int="1">
+                <Field Id="Spawn Count" Index="4"/>
+            </Int>
+        </Instances>
+    </CUser>
+    <CUser id="SquadWaveClassic">
+        <Fields>
+            <Id value="Spawn Unit"/>
+            <Type value="GameLink"/>
+            <GameLinkType value="Unit"/>
+            <EditorText value="Name"/>
+        </Fields>
+        <Fields Id="Spawn Count" Type="Int"/>
+        <Instances Id="[Default]"/>
+        <Instances Id="Fat Zerglings">
+            <GameLink GameLink="Wave01">
+                <Field Id="Spawn Unit"/>
+            </GameLink>
+            <Int Int="12">
+                <Field Id="Spawn Count"/>
+            </Int>
+        </Instances>
+        <Instances Id="Lava Crawler">
+            <GameLink GameLink="Wave02">
+                <Field Id="Spawn Unit"/>
+            </GameLink>
+            <Int Int="15">
+                <Field Id="Spawn Count"/>
+            </Int>
+        </Instances>
+        <Instances Id="Space Cow">
+            <GameLink GameLink="Wave03">
+                <Field Id="Spawn Unit"/>
+            </GameLink>
+            <Int Int="15">
+                <Field Id="Spawn Count"/>
+            </Int>
+        </Instances>
+        <Instances Id="Marine">
+            <GameLink GameLink="Wave04">
+                <Field Id="Spawn Unit"/>
+            </GameLink>
+            <Int Int="12">
+                <Field Id="Spawn Count"/>
+            </Int>
+        </Instances>
+        <Instances Id="Hoverlord">
+            <GameLink GameLink="Wave05">
+                <Field Id="Spawn Unit"/>
+            </GameLink>
+            <Int Int="12">
+                <Field Id="Spawn Count"/>
+            </Int>
+        </Instances>
+        <Instances Id="Roach">
+            <GameLink GameLink="Wave06">
+                <Field Id="Spawn Unit"/>
+            </GameLink>
+            <Int Int="12">
+                <Field Id="Spawn Count"/>
+            </Int>
+        </Instances>
+        <Instances Id="Zealot">
+            <GameLink GameLink="Wave07">
+                <Field Id="Spawn Unit"/>
+            </GameLink>
+            <Int Int="10">
+                <Field Id="Spawn Count"/>
+            </Int>
+        </Instances>
+        <Instances Id="Grim Reaper">
+            <GameLink GameLink="Wave08">
+                <Field Id="Spawn Unit"/>
+            </GameLink>
+            <Int Int="12">
+                <Field Id="Spawn Count"/>
+            </Int>
+        </Instances>
+        <Instances Id="Exotic">
+            <GameLink GameLink="Wave09">
+                <Field Id="Spawn Unit"/>
+            </GameLink>
+            <Int Int="15">
+                <Field Id="Spawn Count"/>
+            </Int>
+        </Instances>
+        <Instances Id="The Infestor">
+            <GameLink GameLink="Wave10">
+                <Field Id="Spawn Unit"/>
+            </GameLink>
+            <Int Int="1">
+                <Field Id="Spawn Count"/>
+            </Int>
+        </Instances>
+        <Instances Id="Scantipede">
+            <GameLink GameLink="Wave11">
+                <Field Id="Spawn Unit"/>
+            </GameLink>
+            <Int Int="18">
+                <Field Id="Spawn Count"/>
+            </Int>
+        </Instances>
+        <Instances Id="Hydralisk">
+            <GameLink GameLink="Wave12">
+                <Field Id="Spawn Unit"/>
+            </GameLink>
+            <Int Int="15">
+                <Field Id="Spawn Count"/>
+            </Int>
+        </Instances>
+        <Instances Id="Broodlord">
+            <GameLink GameLink="Wave13">
+                <Field Id="Spawn Unit"/>
+            </GameLink>
+            <Int Int="15">
+                <Field Id="Spawn Count"/>
+            </Int>
+        </Instances>
+        <Instances Id="Immortal">
+            <GameLink GameLink="Wave14">
+                <Field Id="Spawn Unit"/>
+            </GameLink>
+            <Int Int="8">
+                <Field Id="Spawn Count"/>
+            </Int>
+        </Instances>
+        <Instances Id="Lurker">
+            <GameLink GameLink="Wave15">
+                <Field Id="Spawn Unit"/>
+            </GameLink>
+            <Int Int="12">
+                <Field Id="Spawn Count"/>
+            </Int>
+        </Instances>
+        <Instances Id="Hellion">
+            <GameLink GameLink="Wave16">
+                <Field Id="Spawn Unit"/>
+            </GameLink>
+            <Int Int="15">
+                <Field Id="Spawn Count"/>
+            </Int>
+        </Instances>
+        <Instances Id="Marauder">
+            <GameLink GameLink="Wave17">
+                <Field Id="Spawn Unit"/>
+            </GameLink>
+            <Int Int="12">
+                <Field Id="Spawn Count"/>
+            </Int>
+        </Instances>
+        <Instances Id="Corruptor">
+            <GameLink GameLink="Wave18">
+                <Field Id="Spawn Unit"/>
+            </GameLink>
+            <Int Int="15">
+                <Field Id="Spawn Count"/>
+            </Int>
+        </Instances>
+        <Instances Id="Lyote">
+            <GameLink GameLink="Wave19">
+                <Field Id="Spawn Unit"/>
+            </GameLink>
+            <Int Int="12">
+                <Field Id="Spawn Count"/>
+            </Int>
+        </Instances>
+        <Instances Id="Fatty">
+            <GameLink GameLink="Wave20">
+                <Field Id="Spawn Unit"/>
+            </GameLink>
+            <Int Int="1">
+                <Field Id="Spawn Count"/>
+            </Int>
+        </Instances>
+        <Instances Id="Feederling">
+            <GameLink GameLink="Wave21">
+                <Field Id="Spawn Unit"/>
+            </GameLink>
+            <Int Int="12">
+                <Field Id="Spawn Count"/>
+            </Int>
+        </Instances>
+        <Instances Id="Aberration">
+            <GameLink GameLink="Wave22">
+                <Field Id="Spawn Unit"/>
+            </GameLink>
+            <Int Int="16">
+                <Field Id="Spawn Count"/>
+            </Int>
+        </Instances>
+        <Instances Id="ARES">
+            <GameLink GameLink="Wave23">
+                <Field Id="Spawn Unit"/>
+            </GameLink>
+            <Int Int="12">
+                <Field Id="Spawn Count"/>
+            </Int>
+        </Instances>
+        <Instances Id="High Templar">
+            <GameLink GameLink="Wave24">
+                <Field Id="Spawn Unit"/>
+            </GameLink>
+            <Int Int="12">
+                <Field Id="Spawn Count"/>
+            </Int>
+        </Instances>
+        <Instances Id="Hybrid">
+            <GameLink GameLink="Wave25">
+                <Field Id="Spawn Unit"/>
+            </GameLink>
+            <Int Int="4">
+                <Field Id="Spawn Count"/>
+            </Int>
+        </Instances>
+        <Instances Id="Kerrigan">
+            <GameLink GameLink="Wave26">
+                <Field Id="Spawn Unit"/>
+            </GameLink>
+            <Int Int="12">
+                <Field Id="Spawn Count"/>
+            </Int>
+        </Instances>
+        <Instances Id="Predator">
+            <GameLink GameLink="Wave27">
+                <Field Id="Spawn Unit"/>
+            </GameLink>
+            <Int Int="12">
+                <Field Id="Spawn Count"/>
+            </Int>
+        </Instances>
+        <Instances Id="Preserver">
+            <GameLink GameLink="Wave28">
+                <Field Id="Spawn Unit"/>
+            </GameLink>
+            <Int Int="8">
+                <Field Id="Spawn Count"/>
+            </Int>
+        </Instances>
+        <Instances Id="Zukar">
+            <GameLink GameLink="Wave29">
+                <Field Id="Spawn Unit"/>
+            </GameLink>
+            <Int Int="10">
+                <Field Id="Spawn Count"/>
+            </Int>
+        </Instances>
+        <Instances Id="Brutalisk">
+            <GameLink GameLink="Wave30">
+                <Field Id="Spawn Unit"/>
+            </GameLink>
+            <Int Int="1">
+                <Field Id="Spawn Count"/>
+            </Int>
+        </Instances>
+        <Instances Id="Terratron">
+            <GameLink GameLink="Wave31">
+                <Field Id="Spawn Unit"/>
+            </GameLink>
+            <Int Int="6">
+                <Field Id="Spawn Count"/>
+            </Int>
+        </Instances>
+    </CUser>
+</Catalog>

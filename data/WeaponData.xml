@@ -1,0 +1,1773 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CWeaponLegacy default="1" id="BaseAttack">
+        <EditorCategories value=""/>
+        <Options index="DisplayCooldown" value="1"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <AcquireTargetSorts RequestCount="1">
+            <SortArray value="TSDistance"/>
+            <SortArray value="TSLife"/>
+        </AcquireTargetSorts>
+        <MinScanRange value="10"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy default="1" id="NormalAttack" parent="BaseAttack">
+        <Tip value="Weapon/Tip/Normal"/>
+        <Icon value="Starcraft 2 Assets\btn-achievement-33-beta.dds"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy default="1" id="PiercingAttack" parent="BaseAttack">
+        <Tip value="Weapon/Tip/Piercing"/>
+        <Icon value="Starcraft 2 Assets\btn-tips-terran-penetrator-green.dds"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy default="1" id="SiegeAttack" parent="BaseAttack">
+        <Tip value="Weapon/Tip/Siege"/>
+        <Icon value="Assets\Textures\btn-ability-terran-bombardmentstrike-color.dds"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy default="1" id="MagicAttack" parent="BaseAttack">
+        <Tip value="Weapon/Tip/Magic"/>
+        <Icon value="Starcraft 2 Assets\btn-upgrade-protoss-singularitycharge.dds"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy default="1" id="ChaosAttack" parent="BaseAttack">
+        <Tip value="Weapon/Tip/Chaos"/>
+        <Icon value="Starcraft 2 Assets\btn-ability-terran-ultrasonicpulse-color.dds"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="BroodlingNeedleClaws" parent="PiercingAttack">
+        <Options index="Melee" value="1"/>
+        <Period value="1.25"/>
+        <Range value="0.1"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Send_Baneling_Attack" parent="ChaosAttack">
+        <DisplayEffect value="Send_Baneling_Damage"/>
+        <Options index="Melee" value="1"/>
+        <Period value="1"/>
+        <Range value="0.2"/>
+        <Effect value="Suicide"/>
+        <AcquireTargetSorts>
+            <SortArray index="0" value="TSRandom"/>
+        </AcquireTargetSorts>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Send_Blood_Beetle" parent="PiercingAttack">
+        <Options index="Melee" value="1"/>
+        <Range value="0.1"/>
+        <Period value="1.2"/>
+        <DisplayEffect value="Send_Blood_Beetle_Damage"/>
+        <Effect value="Send_Blood_Beetle_Set"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Send_Abyss_Mage_Attack" parent="MagicAttack">
+        <DisplayEffect value="AbyssMageDamage"/>
+        <Range value="4"/>
+        <Period value="0.5"/>
+        <Effect value="AbyssMageBeam"/>
+        <Cost>
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <Link value="Send_Abyss_Mage_Attack"/>
+                <Location value="Unit"/>
+                <TimeUse value="5"/>
+            </Charge>
+        </Cost>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Send_Quillgore" parent="PiercingAttack">
+        <Options index="Melee" value="1"/>
+        <Range value="0.1"/>
+        <Period value="1.3"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="SpawnSwarmLocusts" parent="BaseAttack">
+        <Icon value="Assets\Textures\btn-unit-zerg-locust.dds"/>
+        <DisplayEffect value="SpawnSwarmLocustsDamage"/>
+        <AcquireTargetSorts>
+            <SortArray index="0" value="TSAngleAuto"/>
+            <SortArray index="1" value="TSDistance"/>
+            <SortArray value="TSLifeFraction"/>
+        </AcquireTargetSorts>
+        <AcquirePrioritization value="ByAngle"/>
+        <Range value="6"/>
+        <Period value="5.75"/>
+        <DamagePoint value="0"/>
+        <Backswing value="0"/>
+        <RandomDelayMin value="-0.25"/>
+        <RandomDelayMax value="0.25"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="LaunchPrimalLocusts" parent="BaseAttack">
+        <Icon value="Assets\Textures\btn-unit-zerg-locust.dds"/>
+        <DisplayEffect value="LaunchPrimalLocustDamage"/>
+        <AcquireTargetSorts>
+            <SortArray index="0" value="TSAngleAuto"/>
+            <SortArray index="1" value="TSDistance"/>
+            <SortArray value="TSLifeFraction"/>
+        </AcquireTargetSorts>
+        <AcquirePrioritization value="ByAngle"/>
+        <Range value="10"/>
+        <Period value="4"/>
+        <Effect value="SpawnPrimalLocusts"/>
+        <RandomDelayMin value="-0.5"/>
+        <RandomDelayMax value="0.5"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="SwarmLocustAttack" parent="NormalAttack">
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="SwarmLocustDamage"/>
+        <Range value="0.5"/>
+        <Period value="0.8"/>
+        <DamagePoint value="0.2666"/>
+        <Effect value="SwarmLocustDamage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="SLFeastAttack" parent="NormalAttack">
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="SLFeastDamage"/>
+        <Range value="0.1"/>
+        <Period value="1"/>
+        <Effect value="SLFeastAttackSet"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Send_Mind_Slug" parent="SiegeAttack">
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="Send_Mind_Slug_Damage"/>
+        <Range value="0.25"/>
+        <Period value="0.5"/>
+        <Effect value="MindSlugAttackSet"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Send_Observer" parent="MagicAttack">
+        <Options index="Melee" value="1"/>
+        <Range value="0.1"/>
+        <Period value="0.4"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Send_Titan_Strider" parent="NormalAttack">
+        <Options index="Melee" value="1"/>
+        <Range value="2"/>
+        <Period value="1.2"/>
+        <Effect value="TitanStriderAttackPersistent"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Send_Broodlord_Attack" parent="BaseAttack">
+        <Tip value="Weapon/Tip/Creation"/>
+        <Icon value="Assets\Textures\btn-tips-biosample.dds"/>
+        <DisplayEffect value="BroodlingNeedleClaws"/>
+        <DisplayAttackCount value="2"/>
+        <Range value="6"/>
+        <Period value="1.25"/>
+        <Effect value="BroodlordMissile"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="APulverizerAttack" parent="SiegeAttack">
+        <DisplayEffect value="PulverizerDamage"/>
+        <AcquireTargetSorts>
+            <SortArray index="0" value="TSAngleAuto"/>
+            <SortArray index="1" value="TSDistance"/>
+            <SortArray value="TSLifeFraction"/>
+        </AcquireTargetSorts>
+        <AcquirePrioritization value="ByAngle"/>
+        <Range value="3"/>
+        <Arc value="9.9975"/>
+        <Period value="1"/>
+        <Effect value="PulverizerLM"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="AndroidAttack" parent="NormalAttack">
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="AndroidDamage"/>
+        <AcquireTargetSorts>
+            <SortArray index="0" value="TSAngleAuto"/>
+            <SortArray index="1" value="TSDistance"/>
+            <SortArray value="TSLifeFraction"/>
+        </AcquireTargetSorts>
+        <AcquirePrioritization value="ByAngle"/>
+        <Range value="0.2"/>
+        <Arc value="19.995"/>
+        <Period value="0.8"/>
+        <Effect value="AndroidAttackSet"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="AnnihilatorAttack" parent="ChaosAttack">
+        <DisplayEffect value="AnnihilatorDamage"/>
+        <AcquireTargetSorts>
+            <SortArray index="0" value="TSAngleAuto"/>
+            <SortArray index="1" value="TSDistance"/>
+            <SortArray value="TSLifeFraction"/>
+        </AcquireTargetSorts>
+        <AcquirePrioritization value="ByAngle"/>
+        <Range value="7"/>
+        <Arc value="19.995"/>
+        <Period value="0.4"/>
+        <Effect value="AnnihilatorPersistent"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="AsimovAttack" parent="SiegeAttack">
+        <DisplayEffect value="AsimovDamage"/>
+        <AcquireTargetSorts>
+            <SortArray index="0" value="TSAngleAuto"/>
+            <SortArray index="1" value="TSDistance"/>
+            <SortArray value="TSLifeFraction"/>
+        </AcquireTargetSorts>
+        <AcquirePrioritization value="ByAngle"/>
+        <Range value="2"/>
+        <Arc value="19.995"/>
+        <Period value="2"/>
+        <Effect value="AsimovAttackSet"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="BrawlerAttack" parent="SiegeAttack">
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="BrawlerDamage"/>
+        <AcquireTargetSorts>
+            <SortArray index="0" value="TSAngleAuto"/>
+            <SortArray index="1" value="TSDistance"/>
+            <SortArray value="TSLifeFraction"/>
+        </AcquireTargetSorts>
+        <AcquirePrioritization value="ByAngle"/>
+        <Range value="0.2"/>
+        <Arc value="19.995"/>
+        <Period value="0.75"/>
+        <Effect value="BrawlerAttackSet"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="CelestianAttack" parent="MagicAttack">
+        <DisplayEffect value="CelestianDamage"/>
+        <Range value="4"/>
+        <Period value="1.3"/>
+        <Effect value="CelestianMissile"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="ArchiveAttack" parent="ChaosAttack">
+        <DisplayEffect value="ArchiveDamage"/>
+        <Period value="1.7"/>
+        <Effect value="ArchiveMissile"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="DefenderAttack" parent="NormalAttack">
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="DefenderDamage"/>
+        <Range value="0.1"/>
+        <Period value="1"/>
+        <Effect value="DefenderDamage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="ElderAttack" parent="ChaosAttack">
+        <DisplayEffect value="ElderDamage"/>
+        <Range value="6"/>
+        <Period value="1.1"/>
+        <Effect value="ElderPersistentBeam"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="EncoderAttack" parent="MagicAttack">
+        <DisplayEffect value="EncoderDamage"/>
+        <Range value="3"/>
+        <Period value="1.1"/>
+        <Effect value="EncoderMissile"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="EncrypterAttack" parent="MagicAttack">
+        <DisplayEffect value="EncrypterDamage"/>
+        <Range value="4"/>
+        <Period value="1.15"/>
+        <Effect value="EncrypterMissile"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="MagnetosphereResonatorAttack" parent="MagicAttack">
+        <DisplayEffect value="MagnetosphereResonatorDamage"/>
+        <Period value="0.25"/>
+        <Effect value="MagnetosphereResonatorDamage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="MatriarchAttack" parent="ChaosAttack">
+        <DisplayEffect value="MatriarchDamage"/>
+        <Range value="6"/>
+        <Period value="1.2"/>
+        <Effect value="MatriarchPersistentBeams"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="PreserverAttack" parent="ChaosAttack">
+        <DisplayEffect value="PreserverDamage"/>
+        <Range value="2"/>
+        <Period value="2.2"/>
+        <Effect value="PreserverDamage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="PrismaticResonatorAttack" parent="MagicAttack">
+        <DisplayEffect value="PrismaticResonatorDamage"/>
+        <Period value="0.25"/>
+        <Effect value="PrismaticResonatorDamage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="SentinelAttack" parent="PiercingAttack">
+        <DisplayEffect value="SentinelDamage"/>
+        <Range value="2"/>
+        <Period value="1"/>
+        <Effect value="SentinelDamage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="CenturionAttack" parent="NormalAttack">
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="CenturionDamage"/>
+        <AcquireTargetSorts>
+            <SortArray index="0" value="TSAngleAuto"/>
+            <SortArray index="1" value="TSDistance"/>
+            <SortArray value="TSLifeFraction"/>
+        </AcquireTargetSorts>
+        <AcquirePrioritization value="ByAngle"/>
+        <Range value="0.2"/>
+        <Arc value="19.995"/>
+        <Period value="1.5"/>
+        <Effect value="CenturionAttackSet"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="DreadnoughtAttack" parent="NormalAttack">
+        <DisplayEffect value="DreadnoughtDamage"/>
+        <AcquireTargetSorts>
+            <SortArray index="0" value="TSAngleAuto"/>
+            <SortArray index="1" value="TSDistance"/>
+            <SortArray value="TSLifeFraction"/>
+        </AcquireTargetSorts>
+        <AcquirePrioritization value="ByAngle"/>
+        <Range value="3"/>
+        <Period value="1.5"/>
+        <Effect value="DreadnoughtLM"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="ExecutionerAttack" parent="NormalAttack">
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="ExecutionerDamage"/>
+        <DisplayAttackCount value="1"/>
+        <AcquireTargetSorts>
+            <SortArray index="0" value="TSAngleAuto"/>
+            <SortArray index="1" value="TSDistance"/>
+            <SortArray value="TSLifeFraction"/>
+        </AcquireTargetSorts>
+        <AcquirePrioritization value="ByAngle"/>
+        <Range value="0.2"/>
+        <Period value="2"/>
+        <Effect value="ExecutionerAttackSet"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="GoliathAttack" parent="SiegeAttack">
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="HerculesDamage"/>
+        <Range value="0.2"/>
+        <Period value="0.9"/>
+        <Effect value="HerculesDamage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="GravLanceAttack" parent="MagicAttack">
+        <DisplayEffect value="GravLanceDamage"/>
+        <AcquireTargetSorts>
+            <SortArray index="0" value="TSAngleAuto"/>
+            <SortArray index="1" value="TSDistance"/>
+            <SortArray value="TSLifeFraction"/>
+        </AcquireTargetSorts>
+        <AcquirePrioritization value="ByAngle"/>
+        <Range value="6.5"/>
+        <Period value="1.5"/>
+        <Effect value="GravLanceCreatePersistent"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="LaserBatteryAttack" parent="PiercingAttack">
+        <DisplayEffect value="LaserBatteryDamage"/>
+        <DisplayAttackCount value="5"/>
+        <AcquirePrioritization value="ByAngle"/>
+        <Range value="4.5"/>
+        <Period value="0.3"/>
+        <Effect value="LaserBatteryAttackSet"/>
+        <AcquireTargetSorts>
+            <SortArray index="0" value="TSAngleAuto"/>
+            <SortArray index="1" value="TSDistance"/>
+            <SortArray value="TSLifeFraction"/>
+        </AcquireTargetSorts>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="MissileBarrageAttack" parent="SiegeAttack">
+        <AcquireTargetSorts>
+            <SortArray index="0" value="TSAngleAuto"/>
+            <SortArray index="1" value="TSDistance"/>
+            <SortArray value="TSLifeFraction"/>
+        </AcquireTargetSorts>
+        <DisplayEffect value="HurricaneMissileDamage22"/>
+        <DisplayAttackCount value="10"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Dead,Hidden,Invulnerable"/>
+        <AcquirePrioritization value="ByAngle"/>
+        <Range value="7.5"/>
+        <Period value="3"/>
+        <Effect value="HurricaneMissile2"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="ObliteratorAttack" parent="NormalAttack">
+        <DisplayEffect value="ObliteratorDamage"/>
+        <AcquireTargetSorts>
+            <SortArray index="0" value="TSAngleAuto"/>
+            <SortArray index="1" value="TSDistance"/>
+            <SortArray value="TSLifeFraction"/>
+        </AcquireTargetSorts>
+        <AcquirePrioritization value="ByAngle"/>
+        <Range value="4.25"/>
+        <Arc value="9.9975"/>
+        <Period value="1.5"/>
+        <Effect value="ObliteratorLM"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="ProphetAttack" parent="MagicAttack">
+        <DisplayEffect value="ProphetDamage"/>
+        <Period value="1.2"/>
+        <Effect value="ForesightSet"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="AurorAttack" parent="MagicAttack">
+        <DisplayEffect value="AurorDamage"/>
+        <Period value="1.2"/>
+        <Effect value="AurorAttackSet"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="SalvagerAttack" parent="NormalAttack">
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="SalvagerDamage"/>
+        <AcquireTargetSorts>
+            <SortArray index="0" value="TSAngleAuto"/>
+            <SortArray index="1" value="TSDistance"/>
+            <SortArray value="TSLifeFraction"/>
+        </AcquireTargetSorts>
+        <AcquirePrioritization value="ByAngle"/>
+        <Range value="0.2"/>
+        <Arc value="11.25"/>
+        <Period value="1"/>
+        <Effect value="SalvagerAttackSet"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Send_Dark_Probe_Attack" parent="MagicAttack">
+        <DisplayEffect value="Send_Dark_Probe_Damage"/>
+        <Range value="3.5"/>
+        <Period value="1.5"/>
+        <Effect value="Send_Dark_Probe_Damage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="PrimalLocustAttack" parent="NormalAttack">
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="PrimalLocustDamage"/>
+        <Range value="0.5"/>
+        <Period value="0.8"/>
+        <DamagePoint value="0.2666"/>
+        <Effect value="PrimalLocustDamage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="TerminatorAttack" parent="PiercingAttack">
+        <DisplayEffect value="TerminatorDamage"/>
+        <AcquireTargetSorts>
+            <SortArray index="0" value="TSAngleAuto"/>
+            <SortArray index="1" value="TSDistance"/>
+            <SortArray value="TSLifeFraction"/>
+        </AcquireTargetSorts>
+        <AcquirePrioritization value="ByAngle"/>
+        <Range value="3"/>
+        <Arc value="9.9975"/>
+        <Period value="0.33"/>
+        <Effect value="TerminatorDamage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="TheosAttack" parent="BaseAttack">
+        <Tip value="Weapon/Tip/Creation"/>
+        <Icon value="Assets\Textures\btn-tips-biosample.dds"/>
+        <DisplayEffect value="TheosDamage"/>
+        <Range value="7"/>
+        <Period value="4.5"/>
+        <Effect value="CreationSet"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="FallenAttack" parent="NormalAttack">
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="FallenDamage"/>
+        <Range value="0.1"/>
+        <Period value="1.4"/>
+        <Effect value="FallenDamage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="CupidAttack" parent="PiercingAttack">
+        <DisplayEffect value="CupidDamage"/>
+        <Period value="1"/>
+        <Effect value="CupidMissile"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="ArchangelAttack" parent="ChaosAttack">
+        <DisplayEffect value="ArchangelDamage"/>
+        <Range value="8"/>
+        <Period value="0.7"/>
+        <Effect value="ArchangelMissile"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="DeityAttack" parent="ChaosAttack">
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="DeityDamage"/>
+        <Range value="0.1"/>
+        <Period value="1"/>
+        <Effect value="DeityDamage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="U87PrototypeAttack" parent="ChaosAttack">
+        <DisplayEffect value="U87PrototypeDamage"/>
+        <AcquireTargetSorts>
+            <SortArray index="0" value="TSAngleAuto"/>
+            <SortArray index="1" value="TSDistance"/>
+            <SortArray value="TSLifeFraction"/>
+        </AcquireTargetSorts>
+        <AcquirePrioritization value="ByAngle"/>
+        <Range value="2.5"/>
+        <Arc value="19.995"/>
+        <Period value="0.5"/>
+        <Effect value="LaserBeamPersistent"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="UpholderAttack" parent="PiercingAttack">
+        <DisplayEffect value="UpholderDamage"/>
+        <AcquireTargetSorts>
+            <SortArray index="0" value="TSAngleAuto"/>
+            <SortArray index="1" value="TSDistance"/>
+            <SortArray value="TSLifeFraction"/>
+        </AcquireTargetSorts>
+        <AcquirePrioritization value="ByAngle"/>
+        <Range value="4"/>
+        <Arc value="19.995"/>
+        <Period value="0.33"/>
+        <Effect value="UpholderPersistent"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="VanguardAttack" parent="SiegeAttack">
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="VanguardDamage"/>
+        <Range value="0.1"/>
+        <Period value="0.9"/>
+        <Effect value="VanguardDamage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="SeraphimAttack" parent="MagicAttack">
+        <DisplayEffect value="SeraphimDamage"/>
+        <Range value="4"/>
+        <Period value="1.5"/>
+        <Effect value="SeraphimMissile"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="OceanusAttack" parent="NormalAttack">
+        <DisplayEffect value="OceanusDamage"/>
+        <Range value="3.75"/>
+        <ArcSlop value="45"/>
+        <Period value="0.8"/>
+        <DamagePoint value="0"/>
+        <Effect value="OceanusBounce0Missle"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="AberrationBasherAttack" parent="SiegeAttack">
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="AberrationBasherDamage"/>
+        <Range value="0.5"/>
+        <Period value="2"/>
+        <Effect value="AberrationBasherDamage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="CherubAttack" parent="MagicAttack">
+        <DisplayEffect value="CherubDamage"/>
+        <Range value="4"/>
+        <Period value="1.1"/>
+        <Effect value="CherubMissile"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="SaintAttack" parent="MagicAttack">
+        <DisplayEffect value="SaintDamage"/>
+        <Range value="4"/>
+        <Period value="1.3"/>
+        <Effect value="SaintMissile"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="SpiritAttack" parent="NormalAttack">
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="SpiritDamage"/>
+        <Range value="0.1"/>
+        <Period value="0.5"/>
+        <Effect value="SpiritDamage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="DaemonAttack" parent="NormalAttack">
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="DaemonDamage"/>
+        <Range value="0.1"/>
+        <Period value="0.6"/>
+        <Effect value="DaemonDamage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="TreeofKnowledgeAttack" parent="ChaosAttack">
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="TreeofKnowledgeDamage"/>
+        <Range value="0.2"/>
+        <Period value="1"/>
+        <Effect value="TreeofKnowledgeMissile"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="RangerAttack" parent="PiercingAttack">
+        <DisplayEffect value="RangerDamage"/>
+        <Range value="7.5"/>
+        <Period value="0.9"/>
+        <Effect value="VultureEyeAttackSet"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="MeliaiAttack" parent="PiercingAttack">
+        <DisplayEffect value="MeliaiDamage"/>
+        <Range value="7.5"/>
+        <Period value="0.7"/>
+        <Effect value="PrecisionAttackSet"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="SpriteAttack" parent="MagicAttack">
+        <DisplayEffect value="SpriteDamage"/>
+        <Range value="3"/>
+        <Period value="0.6"/>
+        <Effect value="SpriteDamage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="GuardianAttack" parent="NormalAttack">
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="GuardianDamage"/>
+        <Range value="0.1"/>
+        <Period value="1.4"/>
+        <Effect value="GuardianDamage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="ThunderbirdAttack" parent="MagicAttack">
+        <DisplayEffect value="ThunderbirdDamage"/>
+        <Range value="3"/>
+        <Period value="2"/>
+        <Effect value="ThunderbirdAttackSet"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="TreeofTravelAttack" parent="NormalAttack">
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="TreeofTravelDamage"/>
+        <Range value="0.1"/>
+        <Period value="1.5"/>
+        <Effect value="TreeofTravelDamage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="TreeofTimeAttack" parent="NormalAttack">
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="TreeofTimeDamage"/>
+        <Range value="0.1"/>
+        <Period value="1.5"/>
+        <Effect value="TreeofTimeDamage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="HalfbreedAttack" parent="NormalAttack">
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="HalfbreedDamage"/>
+        <Range value="0.1"/>
+        <Period value="0.9"/>
+        <Effect value="HalfbreedDamage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="TemplarAttack" parent="SiegeAttack">
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="TemplarDamage"/>
+        <Range value="0.1"/>
+        <Period value="0.9"/>
+        <Effect value="TemplarDamage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="YggdrasilAttack" parent="MagicAttack">
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="YggdrasilDamage"/>
+        <Range value="0.2"/>
+        <Period value="1.2"/>
+        <Effect value="YggdrasilDamage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="TreeofLifeAttack" parent="MagicAttack">
+        <DisplayEffect value="TreeofLifeDamage"/>
+        <Range value="3"/>
+        <Period value="1.8"/>
+        <Effect value="TreeofLifeMissile"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="FiendAttack" parent="NormalAttack">
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="FiendDamage"/>
+        <Range value="0.1"/>
+        <Period value="1.35"/>
+        <Effect value="FiendDamage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="HadesAttack" parent="ChaosAttack">
+        <DisplayEffect value="HadesDamage"/>
+        <Range value="4"/>
+        <Period value="0.5"/>
+        <Effect value="HadesMissile"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="FireArcherAttack" parent="PiercingAttack">
+        <DisplayEffect value="FireArcherDamage"/>
+        <Range value="6.25"/>
+        <Period value="0.4"/>
+        <Effect value="FireArcherAbilityDamageSet"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="DarkMageAttack" parent="MagicAttack">
+        <DisplayEffect value="DarkMageDamage"/>
+        <Range value="3.5"/>
+        <Period value="1"/>
+        <Effect value="DarkMageDamage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="CarrionSpitterAttack" parent="PiercingAttack">
+        <DisplayEffect value="CarrionSplitterDamage"/>
+        <DisplayAttackCount value="2"/>
+        <Period value="0.8"/>
+        <Effect value="CarrionSpitter2xSet"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="FanaticAttack" parent="SiegeAttack">
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="FanaticDamage"/>
+        <Range value="0.1"/>
+        <Period value="1.35"/>
+        <Effect value="FanaticDamage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="InfernoAttack" parent="ChaosAttack">
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="InfernoDamage"/>
+        <Range value="0.1"/>
+        <Period value="1.35"/>
+        <Effect value="InfernoDamage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="DiabloAttack" parent="ChaosAttack">
+        <DisplayEffect value="DiabloDamage"/>
+        <Range value="3.75"/>
+        <Period value="1.35"/>
+        <Effect value="DiabloMissile"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="ImpAttack" parent="ChaosAttack">
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="ImpDamage"/>
+        <Range value="0.1"/>
+        <Period value="0.8"/>
+        <Effect value="ImpDamage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="NightcrawlerAttack" parent="PiercingAttack">
+        <DisplayEffect value="NightcrawlerDamage"/>
+        <DisplayAttackCount value="3"/>
+        <Period value="0.45"/>
+        <Effect value="NightCrawlerTestSet"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="DoomsdayMachineAttack" parent="SiegeAttack">
+        <DisplayEffect value="DoomsdayDamage"/>
+        <Range value="4.5"/>
+        <Period value="0.9"/>
+        <Effect value="DoomsdayBeam"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="InfantryAttack" parent="PiercingAttack">
+        <DisplayEffect value="InfantryDamage"/>
+        <Range value="6"/>
+        <Period value="1.8"/>
+        <Effect value="InfantryDamage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="PyroAttack" parent="ChaosAttack">
+        <DisplayEffect value="PyroDamage"/>
+        <Range value="2.25"/>
+        <Period value="0.5"/>
+        <Effect value="PyroDamage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="ZeusAttack" parent="PiercingAttack">
+        <DisplayEffect value="ZeusDamage"/>
+        <Range value="8"/>
+        <Period value="0.25"/>
+        <Effect value="ZeusAttackSet"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="EntAttack" parent="NormalAttack">
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="EntDamage"/>
+        <Range value="0.1"/>
+        <Period value="1.4"/>
+        <Effect value="EntDamage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="VeteranAttack" parent="NormalAttack">
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="VeteranDamage"/>
+        <Range value="0.1"/>
+        <Period value="1.3"/>
+        <Effect value="VeteranDamage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="CaptainAttack" parent="NormalAttack">
+        <DisplayEffect value="CaptainDamage"/>
+        <Range value="3"/>
+        <Period value="0.25"/>
+        <Effect value="CaptainDamage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="AdmiralAttack" parent="NormalAttack">
+        <DisplayEffect value="AdmiralDamage"/>
+        <Range value="3"/>
+        <Period value="0.3"/>
+        <Effect value="AdmiralDamage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="TempestAttack" parent="SiegeAttack">
+        <DisplayEffect value="TempestDamageEffect"/>
+        <Range value="2.25"/>
+        <Period value="0.6"/>
+        <Effect value="TempestMissile"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="LeviathanAttack" parent="SiegeAttack">
+        <DisplayEffect value="LeviathanDamage"/>
+        <Range value="2.25"/>
+        <Period value="2.1"/>
+        <Effect value="LeviathanMissile"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="CyborgAttack" parent="NormalAttack">
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="CyborgDamage"/>
+        <Range value="0.2"/>
+        <Period value="1.3"/>
+        <Effect value="CyborgDamage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="KrogothAttack" parent="NormalAttack">
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="KrogothDamage"/>
+        <Range value="0.2"/>
+        <Period value="0.9"/>
+        <Effect value="KrogothAttackSet"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="NeotankAttack" parent="SiegeAttack">
+        <DisplayEffect value="NeotankDamage"/>
+        <Range value="4.5"/>
+        <Period value="0.9"/>
+        <Effect value="NeotankDamage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="SkeletorAttack" parent="NormalAttack">
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="SkeletorDamage"/>
+        <Range value="0.1"/>
+        <Period value="0.9"/>
+        <Effect value="SkeletorAttackSet"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="GateguardAttack" parent="NormalAttack">
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="GateguardDamage"/>
+        <Range value="0.1"/>
+        <Period value="1"/>
+        <Effect value="GateguardDamage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="HarbingerAttack" parent="SiegeAttack">
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="HarbingerDamage"/>
+        <Range value="0.1"/>
+        <Period value="1"/>
+        <Effect value="HarbingerDamage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="BoneOverseerAttack" parent="MagicAttack">
+        <DisplayEffect value="BoneOverseerDamage"/>
+        <Range value="2.25"/>
+        <Period value="1.5"/>
+        <Effect value="BoneOverseerMissile"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="KeeperofSoulsAttack" parent="MagicAttack">
+        <DisplayEffect value="KeeperofSoulsDamage"/>
+        <Range value="2.25"/>
+        <Period value="1.4"/>
+        <Effect value="KeeperofSoulsMissile"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="NightmareAttack" parent="NormalAttack">
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="NightmareDamage"/>
+        <Range value="0.1"/>
+        <Period value="0.25"/>
+        <Effect value="NightmareAttackSet"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="DoppelgangerAttack" parent="ChaosAttack">
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="DoppelgangerDamage"/>
+        <Range value="0.1"/>
+        <Period value="0.15"/>
+        <Effect value="DoppelgangerAttackSet"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="LordofDeathAttack" parent="ChaosAttack">
+        <DisplayEffect value="LordofDeathDamage"/>
+        <Range value="4"/>
+        <Period value="0.5"/>
+        <Effect value="LordofDeathMissile"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="DragonAspectAttack" parent="NormalAttack">
+        <DisplayEffect value="DragonAspectDamage"/>
+        <Range value="3.5"/>
+        <Period value="0.5"/>
+        <Effect value="DragonAspectMissile"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="GreymaneAttack" parent="SiegeAttack">
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="GreymaneDamage"/>
+        <Range value="1.5"/>
+        <Period value="1.3"/>
+        <Effect value="GreymaneDamage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="GrizzlyAttack" parent="SiegeAttack">
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="GrizzlyDamage"/>
+        <Range value="0.2"/>
+        <Period value="1.2"/>
+        <Effect value="GrizzlyDamage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="HarpyAttack" parent="MagicAttack">
+        <DisplayEffect value="HarpyDamage"/>
+        <Range value="3"/>
+        <Period value="1.1"/>
+        <Effect value="B05Missle"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="MedusaAttack" parent="MagicAttack">
+        <DisplayEffect value="MedusaDamage"/>
+        <Range value="3"/>
+        <Period value="1"/>
+        <Effect value="B06Missle"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="ProtonAttack" parent="ChaosAttack">
+        <DisplayEffect value="ProtonDamage"/>
+        <Range value="2.5"/>
+        <Period value="1.25"/>
+        <DamagePoint value="0.083"/>
+        <Backswing value="1.167"/>
+        <Effect value="ProtonDamage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="FenixAttack" parent="MagicAttack">
+        <DisplayEffect value="FenixDamage"/>
+        <Range value="2"/>
+        <Period value="0.98"/>
+        <DamagePoint value="0.083"/>
+        <Backswing value="1.167"/>
+        <Effect value="FenixAbilityDamageSet"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="AquaSpiritAttack" parent="NormalAttack">
+        <DisplayEffect value="AquaSpiritDamage"/>
+        <Range value="3.75"/>
+        <ArcSlop value="45"/>
+        <Period value="0.8"/>
+        <DamagePoint value="0"/>
+        <Effect value="AquaSpiritBounce0Missle"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="AdeptAttack" parent="ChaosAttack">
+        <DisplayEffect value="fAdeptDamage"/>
+        <Range value="3"/>
+        <Period value="1.45"/>
+        <Backswing value="0"/>
+        <Effect value="AdeptDamageSet"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="AberrationPulverizerAttack" parent="SiegeAttack">
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="AberrationPulverizerDamage"/>
+        <Range value="0.4"/>
+        <Period value="2"/>
+        <Effect value="AberrationPulverizerDamage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="RoachChampionAttack" parent="NormalAttack">
+        <DisplayEffect value="RoachChampionDamage"/>
+        <Range value="4.25"/>
+        <Period value="1.1"/>
+        <Effect value="B08Missle"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="RoachFighterAttack" parent="NormalAttack">
+        <DisplayEffect value="RoachFighterDamage"/>
+        <Range value="4.25"/>
+        <Period value="1.1"/>
+        <Effect value="B07Missle"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="SpawnofDragonAttack" parent="NormalAttack">
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="SpawnofDragonDamage"/>
+        <Range value="0.1"/>
+        <Period value="1.5"/>
+        <Effect value="SpawnofDragonDamage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="WatcherAttack" parent="MagicAttack">
+        <DisplayEffect value="WatcherDamage"/>
+        <Range value="3"/>
+        <Period value="0.8"/>
+        <DamagePoint value="0.083"/>
+        <Backswing value="1.167"/>
+        <Effect value="WatcherDamage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="VioletAttack" parent="MagicAttack">
+        <DisplayEffect value="VioletDamage"/>
+        <Range value="3"/>
+        <Period value="0.8"/>
+        <DamagePoint value="0.083"/>
+        <Backswing value="1.167"/>
+        <Effect value="VioletDamage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="MudmanAttack" parent="NormalAttack">
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="MudmanDamage"/>
+        <Range value="0.1"/>
+        <Period value="1.35"/>
+        <DamagePoint value="0.083"/>
+        <Backswing value="1.167"/>
+        <Effect value="MudmanDamage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="GolemAttack" parent="SiegeAttack">
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="GolemDamage"/>
+        <Range value="0.1"/>
+        <Period value="1.3"/>
+        <DamagePoint value="0.083"/>
+        <Backswing value="1.167"/>
+        <Effect value="GolemDamage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="DiscipleAttack" parent="PiercingAttack">
+        <DisplayEffect value="DiscipleDamage"/>
+        <Range value="5.5"/>
+        <Period value="1"/>
+        <DamagePoint value="0.083"/>
+        <Backswing value="1.167"/>
+        <Effect value="DiscipleDamageSet"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="MessiahAttack" parent="MagicAttack">
+        <DisplayEffect value="MessiahDamage"/>
+        <Range value="5.5"/>
+        <Period value="0.9"/>
+        <DamagePoint value="0.083"/>
+        <Backswing value="1.167"/>
+        <Effect value="MessiahDamageSet"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="SeerofDarknessAttack" parent="MagicAttack">
+        <DisplayEffect value="SeerofDarknessDamage"/>
+        <Range value="2"/>
+        <Period value="1"/>
+        <DamagePoint value="0.083"/>
+        <Backswing value="1.167"/>
+        <Effect value="SeerofDarknessDamage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Send_Zergling" parent="NormalAttack">
+        <Options index="Melee" value="1"/>
+        <Range value="0.1"/>
+        <Period value="1.25"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Send_Thor" parent="PiercingAttack">
+        <Range value="4"/>
+        <Period value="1.2"/>
+        <Effect value="CrippleSet"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Send_Roach" parent="NormalAttack">
+        <Options index="Melee" value="1"/>
+        <Range value="0.1"/>
+        <Period value="1"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Send_Zealot" parent="NormalAttack">
+        <Options index="Melee" value="1"/>
+        <Range value="0.1"/>
+        <Period value="1.2"/>
+        <Effect value="ZealotBashSet"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Send_Mutalisk" parent="PiercingAttack">
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="MutaliskBounce0Damage"/>
+        <Range value="0.1"/>
+        <Period value="2"/>
+        <Effect value="MutaliskBounce0Missile"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Send_Medic" parent="MagicAttack">
+        <Range value="2.5"/>
+        <Period value="1.1"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Send_Marauder" parent="NormalAttack">
+        <Range value="2.5"/>
+        <Period value="1.2"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Send_Goliath" parent="PiercingAttack">
+        <Range value="3"/>
+        <Period value="1.2"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Send_Immortal" parent="NormalAttack">
+        <Options index="Melee" value="1"/>
+        <Range value="0.1"/>
+        <Period value="1"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Send_Mothership" parent="MagicAttack">
+        <Range value="3"/>
+        <Period value="1"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Send_Siege_Tank" parent="SiegeAttack">
+        <Range value="6.9"/>
+        <Period value="1.25"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Send_Marine" parent="PiercingAttack">
+        <Range value="4"/>
+        <Period value="0.9"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Send_Firebat" parent="NormalAttack">
+        <Options index="Melee" value="1"/>
+        <Range value="0.1"/>
+        <Period value="1.2"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Send_Hydralisk" parent="PiercingAttack">
+        <DisplayEffect value="Send_Hydralisk_Damage"/>
+        <Range value="3.5"/>
+        <Period value="1"/>
+        <Effect value="SlowingAttackSet"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Send_Hellion" parent="MagicAttack">
+        <Range value="4"/>
+        <Period value="1.1"/>
+        <Effect value="SunderSet"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Send_Powermortal" parent="NormalAttack">
+        <Options index="Melee" value="1"/>
+        <Range value="0.1"/>
+        <Period value="1"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Send_Dark_Templar" parent="NormalAttack">
+        <Options index="Melee" value="1"/>
+        <Range value="0.1"/>
+        <Period value="0.8"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Send_Queen" parent="NormalAttack">
+        <Range value="4"/>
+        <Period value="0.7"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Send_Colossus" parent="SiegeAttack">
+        <Range value="6.9"/>
+        <Period value="1.1"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Send_High_Templar" parent="MagicAttack">
+        <Range value="4"/>
+        <Period value="0.9"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Send_Feederling" parent="NormalAttack">
+        <Options index="Melee" value="1"/>
+        <Range value="1.1"/>
+        <Period value="1.3"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Send_Banshee" parent="MagicAttack">
+        <Range value="2.5"/>
+        <Period value="1.2"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Send_Ultralisk" parent="SiegeAttack">
+        <Options index="Melee" value="1"/>
+        <Range value="0.1"/>
+        <Period value="1.3"/>
+        <Effect value="Send_Ultralisk_Attack_Set"/>
+        <DamagePoint value="0.5"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Send_Shadow_Templar" parent="NormalAttack">
+        <Options index="Melee" value="1"/>
+        <Range value="0.1"/>
+        <Period value="0.8"/>
+        <Effect value="ShadowTemplarSet"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Wave01Attack" parent="PiercingAttack">
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="Wave01Damage"/>
+        <Range value="0.1"/>
+        <Period value="1.25"/>
+        <Effect value="Wave01Damage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="WandererAttack" parent="NormalAttack">
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="WandererDamage"/>
+        <Range value="0.1"/>
+        <Period value="0.9"/>
+        <DamagePoint value="0.083"/>
+        <Backswing value="1.167"/>
+        <Effect value="WandererDamage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Wave02Attack" parent="NormalAttack">
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="Wave02Damage"/>
+        <Range value="0.2"/>
+        <Period value="1"/>
+        <Effect value="Wave02Damage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="SpectreAttack" parent="MagicAttack">
+        <DisplayEffect value="SpectreDamage"/>
+        <Range value="5.5"/>
+        <Period value="0.33"/>
+        <DamagePoint value="0.083"/>
+        <Backswing value="1.167"/>
+        <Effect value="SpectreDamage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Wave05Attack" parent="MagicAttack">
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="Wave05Damage"/>
+        <Range value="0.1"/>
+        <Period value="0.8"/>
+        <DamagePoint value="0.05"/>
+        <Backswing value="0.75"/>
+        <Effect value="Wave05Damage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Wave06Attack" parent="SiegeAttack">
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="Wave06Damage"/>
+        <Range value="0.1"/>
+        <Period value="1.4"/>
+        <DamagePoint value="0.05"/>
+        <Backswing value="0.75"/>
+        <Effect value="Wave06Damage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Wave07Attack" parent="PiercingAttack">
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="Wave07Damage"/>
+        <Range value="0.1"/>
+        <Period value="1.2"/>
+        <DamagePoint value="0.05"/>
+        <Backswing value="0.75"/>
+        <Effect value="Wave07Damage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Wave08Attack" parent="MagicAttack">
+        <DisplayEffect value="Wave08Damage"/>
+        <Range value="3"/>
+        <Period value="1"/>
+        <DamagePoint value="0.05"/>
+        <Backswing value="0.75"/>
+        <Effect value="Wave08Damage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Wave09Attack" parent="NormalAttack">
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="Wave09Damage"/>
+        <Range value="0.2"/>
+        <Period value="1.2"/>
+        <DamagePoint value="0.05"/>
+        <Backswing value="0.75"/>
+        <Effect value="Wave09Damage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Wave10Attack" parent="ChaosAttack">
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="Wave10Damage"/>
+        <Range value="0.2"/>
+        <Period value="0.7"/>
+        <DamagePoint value="0.05"/>
+        <Backswing value="0.75"/>
+        <Effect value="Wave10Damage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Wave03Attack" parent="NormalAttack">
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="Wave03Damage"/>
+        <Range value="0.2"/>
+        <Period value="1.1"/>
+        <Effect value="Wave03Damage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Wave04Attack" parent="PiercingAttack">
+        <DisplayEffect value="Wave04Damage"/>
+        <Range value="3"/>
+        <Period value="0.9"/>
+        <DamagePoint value="0.05"/>
+        <Backswing value="0.75"/>
+        <Effect value="Wave04Damage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="SoulofHeroAttack" parent="NormalAttack">
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="SoulofHeroDamage"/>
+        <Range value="0.1"/>
+        <Period value="1"/>
+        <DamagePoint value="0.083"/>
+        <Backswing value="1.167"/>
+        <Effect value="SoulofHeroDamage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="SecurityCannons" parent="BaseAttack">
+        <Icon value="Assets\Textures\btn-research-zerg-regenerativebio-steel.dds"/>
+        <DisplayEffect value="KingDamage"/>
+        <Range value="7"/>
+        <Period value="0.8"/>
+        <DamagePoint value="0"/>
+        <Backswing value="0.25"/>
+        <Effect value="KingAttackSet"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="MercurialAttack" parent="MagicAttack">
+        <DisplayEffect value="MercurialDamage"/>
+        <Range value="6.5"/>
+        <Period value="0.33"/>
+        <DamagePoint value="0.083"/>
+        <Backswing value="1.167"/>
+        <Effect value="MercurialDamage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="DarkPriestAttack" parent="MagicAttack">
+        <DisplayEffect value="DarkPriestDamage"/>
+        <Range value="7"/>
+        <Period value="0.82"/>
+        <DamagePoint value="0.083"/>
+        <Backswing value="1.167"/>
+        <Effect value="DarkPriestDamage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="SoulofVillainAttack" parent="MagicAttack">
+        <DisplayEffect value="SoulofVillainDamage"/>
+        <Range value="4.25"/>
+        <Period value="1.2"/>
+        <DamagePoint value="0.083"/>
+        <Backswing value="1.167"/>
+        <Effect value="SoulofVillainSet"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Wave11Attack" parent="SiegeAttack">
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="Wave11Damage"/>
+        <Range value="0.1"/>
+        <Period value="0.8"/>
+        <DamagePoint value="0.05"/>
+        <Backswing value="0.75"/>
+        <Effect value="Wave11Damage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Wave30Attack" parent="ChaosAttack">
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="Wave30Damage"/>
+        <Range value="0.1"/>
+        <Period value="0.35"/>
+        <DamagePoint value="0.05"/>
+        <Backswing value="0.75"/>
+        <Effect value="Wave30Damage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Wave29Attack" parent="MagicAttack">
+        <DisplayEffect value="Wave29Damage"/>
+        <Range value="3"/>
+        <Period value="1.3"/>
+        <DamagePoint value="0.05"/>
+        <Backswing value="0.75"/>
+        <Effect value="Wave29Damage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Wave28Attack" parent="PiercingAttack">
+        <DisplayEffect value="Wave28Damage"/>
+        <Range value="4"/>
+        <Period value="0.8"/>
+        <DamagePoint value="0.05"/>
+        <Backswing value="0.75"/>
+        <Effect value="Wave28"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Wave27Attack" parent="NormalAttack">
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="Wave27Damage"/>
+        <Range value="0.1"/>
+        <Period value="1"/>
+        <DamagePoint value="0.05"/>
+        <Backswing value="0.75"/>
+        <Effect value="Wave27Damage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Wave26Attack" parent="NormalAttack">
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="Wave26Damage"/>
+        <Range value="0.1"/>
+        <Period value="1.3"/>
+        <DamagePoint value="0.05"/>
+        <Backswing value="0.75"/>
+        <Effect value="Wave26Damage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Wave25Attack" parent="PiercingAttack">
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="Wave25Damage"/>
+        <Range value="0.1"/>
+        <Period value="1"/>
+        <DamagePoint value="0.05"/>
+        <Backswing value="0.75"/>
+        <Effect value="Wave25Damage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Wave24Attack" parent="MagicAttack">
+        <DisplayEffect value="Wave24Damage"/>
+        <Range value="4"/>
+        <Period value="1.2"/>
+        <DamagePoint value="0.05"/>
+        <Backswing value="0.75"/>
+        <Effect value="Wave24Damage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Wave23Attack" parent="SiegeAttack">
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="Wave23Damage"/>
+        <Range value="0.1"/>
+        <Period value="1.2"/>
+        <DamagePoint value="0.05"/>
+        <Backswing value="0.75"/>
+        <Effect value="Wave23Damage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Wave22Attack" parent="NormalAttack">
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="Wave22Damage"/>
+        <Range value="0.1"/>
+        <Period value="1.5"/>
+        <DamagePoint value="0.05"/>
+        <Backswing value="0.75"/>
+        <Effect value="Wave22"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Wave31Attack" parent="ChaosAttack">
+        <DisplayEffect value="Wave31Damage"/>
+        <Range value="2.25"/>
+        <Period value="0.8"/>
+        <DamagePoint value="0.05"/>
+        <Backswing value="0.75"/>
+        <Effect value="Wave31Damage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Wave21Attack" parent="PiercingAttack">
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="Wave21Damage"/>
+        <Range value="0.1"/>
+        <Period value="0.7"/>
+        <DamagePoint value="0.05"/>
+        <Backswing value="0.75"/>
+        <Effect value="Wave21Damage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Wave19Attack" parent="PiercingAttack">
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="Wave19Damage"/>
+        <Range value="0.1"/>
+        <Period value="0.85"/>
+        <DamagePoint value="0.05"/>
+        <Backswing value="0.75"/>
+        <Effect value="Wave19Damage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Wave18Attack" parent="MagicAttack">
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="Wave18Damage"/>
+        <Range value="0.1"/>
+        <Period value="0.9"/>
+        <DamagePoint value="0.05"/>
+        <Backswing value="0.75"/>
+        <Effect value="Wave18"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Wave20Attack" parent="ChaosAttack">
+        <DisplayEffect value="Wave20Damage"/>
+        <Range value="4"/>
+        <Period value="0.51"/>
+        <DamagePoint value="0.05"/>
+        <Backswing value="0.75"/>
+        <Effect value="Wave20"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Wave17Attack" parent="SiegeAttack">
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="Wave17Damage"/>
+        <Range value="0.2"/>
+        <Period value="1.4"/>
+        <DamagePoint value="0.05"/>
+        <Backswing value="0.75"/>
+        <Effect value="Wave17Damage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Wave16Attack" parent="MagicAttack">
+        <DisplayEffect value="Wave16Damage"/>
+        <Range value="4"/>
+        <Period value="1.1"/>
+        <DamagePoint value="0.05"/>
+        <Backswing value="0.75"/>
+        <Effect value="Wave16Damage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Wave15Attack" parent="NormalAttack">
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="Wave15Damage"/>
+        <Range value="0.1"/>
+        <Period value="1.5"/>
+        <DamagePoint value="0.05"/>
+        <Backswing value="0.75"/>
+        <Effect value="Wave15"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Wave14Attack" parent="NormalAttack">
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="Wave14Damage"/>
+        <Range value="0.1"/>
+        <Period value="1.2"/>
+        <DamagePoint value="0.05"/>
+        <Backswing value="0.75"/>
+        <Effect value="Wave14Damage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Wave13Attack" parent="MagicAttack">
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="Wave13Damage"/>
+        <Range value="0.2"/>
+        <Period value="1"/>
+        <DamagePoint value="0.05"/>
+        <Backswing value="0.75"/>
+        <Effect value="Wave13"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Wave12Attack" parent="PiercingAttack">
+        <DisplayEffect value="Wave12Damage"/>
+        <Range value="4"/>
+        <Period value="0.8"/>
+        <DamagePoint value="0.05"/>
+        <Backswing value="0.75"/>
+        <Effect value="Wave12Missle"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="WraithAttack" parent="MagicAttack">
+        <DisplayEffect value="WraithDamage"/>
+        <Range value="6"/>
+        <Period value="0.33"/>
+        <DamagePoint value="0.083"/>
+        <Backswing value="1.167"/>
+        <Effect value="WraithDamage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="PhantomAttack" parent="ChaosAttack">
+        <Icon value="Assets\Textures\btn-ability-protoss-blink-color.dds"/>
+        <DisplayEffect value="PhantomDamage"/>
+        <DisplayAttackCount value="3"/>
+        <Range value="3.5"/>
+        <Period value="1.3"/>
+        <DamagePoint value="0.083"/>
+        <Backswing value="1.167"/>
+        <Effect value="PhantomMultishot"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="HellRaiserAttack" parent="ChaosAttack">
+        <Icon value="Assets\Textures\btn-ability-protoss-blink-color.dds"/>
+        <DisplayEffect value="HellRaiserDamage"/>
+        <DisplayAttackCount value="3"/>
+        <Range value="3.5"/>
+        <Period value="1"/>
+        <DamagePoint value="0.083"/>
+        <Backswing value="1.167"/>
+        <Effect value="HellRaiserMultishot"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="OutcastAttack" parent="NormalAttack">
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="OutcastDamage"/>
+        <Range value="0.1"/>
+        <Period value="0.85"/>
+        <DamagePoint value="0.083"/>
+        <Backswing value="1.167"/>
+        <Effect value="OutcastDamage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="ForsakenOneAttack" parent="SiegeAttack">
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="ForsakenOneDamage"/>
+        <Range value="0.1"/>
+        <Period value="0.68"/>
+        <DamagePoint value="0.083"/>
+        <Backswing value="1.167"/>
+        <Effect value="ForsakenOneSet"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="ApparitionAttack" parent="PiercingAttack">
+        <DisplayEffect value="ApparitionDamage"/>
+        <Range value="6"/>
+        <Period value="1"/>
+        <DamagePoint value="0.083"/>
+        <Backswing value="1.167"/>
+        <Effect value="ApparitionDamage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="GravekeeperAttack" parent="PiercingAttack">
+        <DisplayEffect value="GravekeeperDamage"/>
+        <Range value="6"/>
+        <Period value="1.1"/>
+        <DamagePoint value="0.083"/>
+        <Backswing value="1.167"/>
+        <Effect value="GravekeeperDamage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="MeridianAttack" parent="MagicAttack">
+        <DisplayEffect value="MeridianDamage"/>
+        <Range value="7"/>
+        <Period value="1"/>
+        <DamagePoint value="0.083"/>
+        <Backswing value="1.167"/>
+        <Effect value="MeridianDamage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="ZerglingSavageAttack" parent="NormalAttack">
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="ZerglingSavageDamage"/>
+        <Range value="0.1"/>
+        <Period value="1.1"/>
+        <Effect value="B02AbilityDamageSet"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="ZerglingWarriorAttack" parent="NormalAttack">
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="ZerglingWarriorDamage"/>
+        <Range value="0.1"/>
+        <Period value="1.2"/>
+        <Effect value="B01AbilityDamageSet"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="BoneWarriorAttack" parent="NormalAttack">
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="BoneWarriorDamage"/>
+        <Range value="0.1"/>
+        <Period value="0.6"/>
+        <Effect value="BoneWarriorDamage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="PeeweeAttack" parent="NormalAttack">
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="PeeweeDamage"/>
+        <Range value="0.1"/>
+        <Period value="1.5"/>
+        <Effect value="PeeweeDamage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="WardenAttack" parent="ChaosAttack">
+        <Options index="Melee" value="1"/>
+        <Icon value="Assets\Textures\btn-ability-protoss-blink-color.dds"/>
+        <DisplayEffect value="WardenRestrainDamage"/>
+        <Range value="0.1"/>
+        <Period value="2.5"/>
+        <Effect value="WardenRestrainDamageSet"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="EliteWardenAttack" parent="ChaosAttack">
+        <Options index="Melee" value="1"/>
+        <Icon value="Assets\Textures\btn-ability-protoss-blink-color.dds"/>
+        <DisplayEffect value="WardenSuspendDamage"/>
+        <Range value="0.1"/>
+        <Period value="2.5"/>
+        <Effect value="WardenSuspendDamageSet"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="WeldtechRelayAttack" parent="BaseAttack">
+        <Options index="Hidden" value="1"/>
+        <Period value="1"/>
+        <Effect value="OrbitalSatelliteAttackSet"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="OrbitalSatelliteAttack" parent="BaseAttack">
+        <Options index="Hidden" value="1"/>
+        <Range value="7"/>
+        <Period value="10"/>
+        <Effect value="OrbitalSatelliteAttackSet"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="EssenceAttack" parent="NormalAttack">
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="SLEssenceDamage"/>
+        <Range value="0.1"/>
+        <Period value="0.75"/>
+        <Effect value="SLEssenceDamage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="RuneguardAttack" parent="NormalAttack">
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="RuneguardDamage"/>
+        <Range value="0.1"/>
+        <Period value="0.75"/>
+        <Effect value="RuneguardDamage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="NetherlordAttack" parent="NormalAttack">
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="NetherlordDamage"/>
+        <Range value="0.1"/>
+        <Period value="1"/>
+        <Effect value="NetherlordDamage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="NethermasterAttack" parent="NormalAttack">
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="NethermasterDamage"/>
+        <Range value="0.3"/>
+        <Period value="0.9"/>
+        <Effect value="NethermasterDamage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="FluxAttack" parent="MagicAttack">
+        <DisplayEffect value="FluxDamage"/>
+        <Period value="0.85"/>
+        <Effect value="FluxMissile"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="StahrryAttack" parent="MagicAttack">
+        <DisplayEffect value="StahrryDamage"/>
+        <Period value="0.8"/>
+        <Effect value="StahrryMissile"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="TwistedFaceAttack" parent="PiercingAttack">
+        <DisplayEffect value="TwistedFaceDamage"/>
+        <Options index="Melee" value="1"/>
+        <Range value="0.1"/>
+        <Period value="0.7"/>
+        <Effect value="SLBloodLift"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="ZeeAttack" parent="PiercingAttack">
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="ZeeDamage"/>
+        <Range value="0.1"/>
+        <Period value="0.6"/>
+        <Effect value="SLBloodFury"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="CraggyAttack" parent="NormalAttack">
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="CraggyDamage"/>
+        <Range value="0.1"/>
+        <Period value="1.5"/>
+        <Effect value="CraggyDamage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="LordKaiserAttack" parent="NormalAttack">
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="LordKaiserDamage"/>
+        <Range value="0.1"/>
+        <Period value="2"/>
+        <Effect value="LordKaiserDamage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="ShadowFistAttack" parent="NormalAttack">
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="SLShadowFistDamage"/>
+        <Range value="0.1"/>
+        <Period value="0.9"/>
+        <Effect value="SLShadowFistAttackSet"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="ScornedHandAttack" parent="NormalAttack">
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="ScornedHandDamage"/>
+        <Range value="0.1"/>
+        <Period value="0.9"/>
+        <Effect value="SLScornedHandAttackSet"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="TeeterAttack" parent="SiegeAttack">
+        <DisplayEffect value="TeeterDamage"/>
+        <Range value="4"/>
+        <Period value="2"/>
+        <Effect value="TeeterMissile"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="HeisendongerAttack" parent="SiegeAttack">
+        <DisplayEffect value="HeisendongerDamage"/>
+        <Range value="4"/>
+        <Period value="1"/>
+        <Effect value="HeisendongerMissile"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="AnwarAttack" parent="MagicAttack">
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="AnwarDamage"/>
+        <Range value="0.1"/>
+        <Period value="1.2"/>
+        <DamagePoint value="0.361"/>
+        <Backswing value="1.333"/>
+        <Effect value="AnwarDamage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="ApprenticeAttack" parent="PiercingAttack">
+        <DisplayEffect value="ApprenticeDamage"/>
+        <Range value="4"/>
+        <Period value="0.6"/>
+        <DamagePoint value="0.05"/>
+        <Effect value="ApprenticeDamage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="ArtisanAttack" parent="SiegeAttack">
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="ArtisanDamage"/>
+        <Range value="0.1"/>
+        <Period value="1.5"/>
+        <DamagePoint value="0.15"/>
+        <Effect value="ArtisanDamage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="StaccatoAttack" parent="PiercingAttack">
+        <DisplayEffect value="StaccatoDamage"/>
+        <Period value="0.4"/>
+        <Effect value="StaccatoDamage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="CleaverAttack" parent="NormalAttack">
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="CleaverDamage"/>
+        <AcquirePrioritization value="ByAngle"/>
+        <Range value="0.1"/>
+        <Period value="0.8"/>
+        <DamagePoint value="0.3332"/>
+        <Effect value="CleaverDamage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="ComposerAttack" parent="ChaosAttack">
+        <DisplayEffect value="ComposerDamage"/>
+        <Range value="6"/>
+        <Period value="1"/>
+        <Effect value="ComposerMissile"/>
+        <AllowedMovement value="Slowing"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="ConductorAttack" parent="MagicAttack">
+        <DisplayEffect value="ConductorDamage"/>
+        <Range value="3"/>
+        <Period value="0.5"/>
+        <Effect value="ConductorDamage"/>
+        <AllowedMovement value="Slowing"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="DamisAttack" parent="NormalAttack">
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="DamisDamage"/>
+        <AcquirePrioritization value="ByAngle"/>
+        <Range value="0.1"/>
+        <Period value="1.7"/>
+        <DamagePoint value="0.3332"/>
+        <Effect value="DamisDamage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="EarlAttack" parent="MagicAttack">
+        <DisplayEffect value="EarlDamage"/>
+        <Period value="0.2"/>
+        <Effect value="EarlMissile"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="FallenAngelAttack" parent="SiegeAttack">
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="FallenAngelDamage"/>
+        <Range value="0.1"/>
+        <Period value="1.3"/>
+        <Effect value="FallenAngelDamage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="HadronAttack" parent="MagicAttack">
+        <DisplayEffect value="HadronDamage"/>
+        <RangeSlop value="0"/>
+        <Period value="0.2"/>
+        <Effect value="HadronMissile"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="CrescendoAttack" parent="SiegeAttack">
+        <DisplayEffect value="CrescendoDamage"/>
+        <Period value="2"/>
+        <Effect value="CrescendoDamage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="PatronAttack" parent="NormalAttack">
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="PatronDamage"/>
+        <Range value="0.1"/>
+        <Period value="0.8"/>
+        <Effect value="PatronDamage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="ManumissioneerAttack" parent="NormalAttack">
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="ManumissioneerDamage"/>
+        <Range value="0.1"/>
+        <Period value="0.9"/>
+        <Effect value="ManumissioneerDamage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="MeenyaAttack" parent="NormalAttack">
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="MeenyaDamage"/>
+        <AcquirePrioritization value="ByAngle"/>
+        <Range value="0.1"/>
+        <Period value="0.8"/>
+        <DamagePoint value="0.95"/>
+        <Effect value="MeenyaDamage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="NonagAttack" parent="NormalAttack">
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="NonagDamage"/>
+        <Range value="0.1"/>
+        <Period value="0.3"/>
+        <DamagePoint value="0"/>
+        <Effect value="NonagDamage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="ObsidiaAttack" parent="PiercingAttack">
+        <DisplayEffect value="ObsidiaDamage"/>
+        <Period value="1.1"/>
+        <Effect value="ObsidiaMissile"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="PrawnAttack" parent="NormalAttack">
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="PrawnDamage"/>
+        <Range value="0.1"/>
+        <Period value="0.8"/>
+        <Effect value="PrawnDamage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="ProducerAttack" parent="NormalAttack">
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="ProducerDamage"/>
+        <Range value="0.1"/>
+        <Period value="0.8"/>
+        <Effect value="ProducerDamage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="ShoAttack" parent="PiercingAttack">
+        <DisplayEffect value="ShoDamage"/>
+        <Range value="4"/>
+        <Period value="0.6"/>
+        <DamagePoint value="0"/>
+        <Backswing value="0.75"/>
+        <Effect value="ShoDamage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="WarlordAttack" parent="ChaosAttack">
+        <DisplayEffect value="WarlordDamage"/>
+        <Range value="6"/>
+        <Period value="1"/>
+        <Effect value="WarlordMissile"/>
+    </CWeaponLegacy>
+</Catalog>
